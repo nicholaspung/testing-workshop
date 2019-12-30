@@ -7,6 +7,24 @@
 // Don't overthink it. This is just a practice run to warm you up
 // to testing react components.
 
+import React from 'react'
+import ReactDOM from 'react-dom'
+import ItemList from '../item-list'
+
+test('render "no items" when no items are given', () => {
+  const container = document.createElement('div')
+  ReactDOM.render(<ItemList items={[]} />, container)
+  expect(container.textContent).toMatch('no items')
+})
+
+test('render "no items" when no items are given', () => {
+  const container = document.createElement('div')
+  ReactDOM.render(<ItemList items={['apple', 'orange', 'pear']} />, container)
+  expect(container.textContent).toMatch('apple')
+  expect(container.textContent).toMatch('orange')
+  expect(container.textContent).toMatch('pear')
+})
+
 // So you can use JSX (which transpiles down to React.createElement):
 // import React from 'react'
 //
